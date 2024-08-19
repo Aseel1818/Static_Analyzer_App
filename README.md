@@ -73,5 +73,3 @@ Identifies magic numbers in the code.
 if value == 42:
     pass
 ```
-
-
