@@ -30,3 +30,48 @@ The analyzer performs two main tasks:
 ```python
 def example_function(int_param: int, str_param1: str, str_param2: str):
     pass
+```
+### 2. Unreachable Code Detection
+This feature identifies lines of code that appear after a return statement.
+
+**Implementation:**
+
+- Reads the code file to find return statements.
+- Checks if subsequent lines contain code that should not be executed.
+
+### 3. Parameter Count Check
+Ensures that functions do not exceed three parameters.
+
+**Implementation:**
+
+- Counts the number of commas in function definitions.
+- Generates an error if a function exceeds the parameter limit.
+  
+**Example:**
+
+```python
+def many_params(a, b, c, d):
+    pass
+```
+### 4. Division by Zero Detection
+Detects potential division by zero errors.
+
+**Implementation:**
+
+- Reads each line to find division operations.
+- Checks if the divisor is zero and generates an error message if so.
+
+### 5. Magic Number Detection
+Identifies magic numbers in the code.
+
+**Implementation:**
+- Checks for direct comparisons with numbers, comparisons without meaningful context, or use of numbers in specific contexts.
+
+**Example:**
+
+```python
+if value == 42:
+    pass
+```
+
+
